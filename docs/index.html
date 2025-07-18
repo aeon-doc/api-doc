@@ -37,8 +37,11 @@
 	},
 	namespace: 'docs-base',
     loadSidebar: true,
-	sidebarDisplayLevel: 1,
-
+    alias: {
+      '/.*/_sidebar.md': '/_sidebar.md',
+    },
+    subMaxLevel: 3,
+    sidebarDisplayLevel: 2, // set sidebar display level
   }
 </script>
 <script src="/api-doc/static/docsify-pagination.min.js"></script>
