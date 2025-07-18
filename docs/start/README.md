@@ -1,29 +1,55 @@
-### **API 对接说明**
+# Brief Description
 
----
+This API processes payments using the uploaded QR code string.
 
-#### 1. **接口认证与使用流程**
+# API Description
 
-为了确保接口的稳定与安全，我们所有的 API 请求都需要通过 `token` 进行认证。整个使用流程非常简单高效：
+Request Method:`POST`
 
-1.  **发起申请：** 首先，请访问我们的[申请页面](你的申请页面链接)，提交您的应用信息以获取接口使用权限。
-2.  **获取 Token：** 申请通过后，您将获得一个唯一的 `token`。请妥善保管此 `token`，它是您调用接口的唯一凭证。
-3.  **使用 Token 请求接口：** 在后续所有的 API 请求中，请务必将此 `token` 添加到请求头（例如：`Authorization: Bearer Your_Token_Here` 或作为 URL 参数 `?token=Your_Token_Here`，具体方式请参考各接口文档）。
+Request Path:`open/ai/scan/payment`
 
----
+## Parameters
 
-#### 2. **为何需要 Token？**
+| Parameter Name | Signature Required | Required | Type   | Length | Description         |
+| -------------- | ------------------ | -------- | ------ | ------ | ------------------- |
+| appId          | Yes                | Yes      | string | 64     | appId               |
+| sign           | No                 | Yes      | string | 512    | Signature           |
+| qrCode         | Yes                | Yes      | string | 512    | QR Code String      |
+| amount         | Yes                | Yes      | string | 20     | Amount              |
+| address        | Yes                | NO       | string | 64     | User wallet address |
 
-您可能会好奇为何我们要求使用 `token`。这主要是基于以下两点考量：
+## Request Example
 
-* **服务器资源维护成本：** 维护稳定、高性能的 API 服务需要投入大量服务器资源和运维成本。`token` 机制可以有效识别和管理接口调用者，确保资源合理分配，防止恶意请求或滥用行为对服务造成冲击，从而保障所有用户的正常使用体验。
-* **避免接口被滥用：** `token` 是我们保护接口安全的重要措施。它可以防止未经授权的访问，降低数据泄露风险，并有助于我们监控接口调用情况，及时发现并阻止异常行为，确保您的数据安全和接口的合规使用。
+```json
+{
+    "appId": "TEST000001",
+    "sign": "TEST000001",
+    "amount": "100000",
+    "qrCode": "00020101021138580010A000000727012800069704070114190360421800120208QRIBFTTA53037045802VN830084006304EDC5",
+	"address": "0x1BC48a3a17dD27C7Ee294Ab679638F6C6583B7Bf",
+}
+```
 
----
+## Response Parameters
 
-#### 3. **免责声明**
+| Parameter Name | Type    | Description      |
+| -------------- | ------- | ---------------- |
+| success        | boolean | Success flag     |
+| error          | boolean | Error flag       |
+| code           | long    | Response code    |
+| msg            | string  | Response message |
+| traceId        | string  | traceId          |
+| model          | object  | Response content |
 
-我们致力于提供便捷、高效的 API 服务，但请您理解并同意以下声明：
+## Response Example
 
-* **数据来源：** 我们的所有接口数据均来源于公开的互联网资源。我们仅作为数据的聚合者和提供者，**不生产任何原始数据**。数据的准确性、时效性、完整性以原始来源为准。
-* **使用责任：** 您应自行承担因接口数据使用不当、非法用途或超出授权范围而产生的一切后果。**任何因接口数据被滥用所引发的问题、损失或法律纠纷，均与本平台及开发者无关。** 请确保您的应用和数据使用行为符合所有适用的法律法规。
+```json
+{
+  "code": "0",
+  "msg": "success",
+  "model": {},
+  "traceId": "6668024eeb989c77a375967aded5d646",
+  "success": true,
+  "error": false
+}
+```
