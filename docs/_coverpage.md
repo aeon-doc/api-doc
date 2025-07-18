@@ -1,9 +1,9 @@
 <!-- _coverpage.md -->
 
-![logo](static/img/img.png ":size=200")
+![logo](static/img/AEON.png ":size=200")
 
-[//]: # (![logo]&#40;static/img/img.png ":size=200x150"&#41;)
-[//]: # (![logo]&#40;static/img/img.png ":size=50%"&#41;)
+[//]: # (![logo]&#40;static/img/AEON.png ":size=200x150"&#41;)
+[//]: # (![logo]&#40;static/img/AEON.png ":size=50%"&#41;)
 
 
 # Unlimit API <small>1.0</small>
