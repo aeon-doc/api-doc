@@ -6,62 +6,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="/static/vue.css">
+  <link rel="stylesheet" href="/api-doc/static/vue.css">
+  
+  <!-- 自动跳转逻辑：如果不是通过doc=1参数访问，则跳转到index_wrong.html -->
+  <script>
+    // 检查URL参数，如果不是通过"对接文档"按钮跳转，则自动跳转到landing page
+    if (!location.search.includes('doc=1')) {
+      location.href = 'home.html';
+    }
+  </script>
 </head>
 <body>
-
-
-
 
 <style type="text/css">
 .content {
   overflow: auto;
 }
-
 </style>
 
   <div id="app"></div>
-  <script src="/static/docsify@4.js"></script>
-  
+
+
+  <script src="/api-doc/static/docsify@4.js"></script>
+
   <script>
-  window.$docsify = {
-
+  window.$docsify = Object.assign(window.$docsify || {}, {
     coverpage: true,
-
     loadSidebar: true,
-	
-	loadNavbar: true,
-	
-	auto2top: true,
-	
-	// name: 'Unlimit API WIKI',
-    // logo: '/static/img/img.png', // Add this line for your logo image
-	
-	// repo: 'https://github.com/Threekiii',
-	
-	
-	search: {
-		maxAge: 86400000, 
-		placeholder: '🔍 Type to search ',
-		paths: 'auto',
-		noData: '😞 No Results! ',
-		depth: 1
-	},
-	
-	namespace: 'docs-base',
-	
-	sidebarDisplayLevel: 0,
-
-  }
-</script>
-<script src="/static/docsify-pagination.min.js"></script>
-<script src="/static/docsify-copy-code.min.js"></script>
-<script src="/static/docsify-sidebar-collapse.min.js"></script>
-<script src="/static/prism-bash.min.js"></script>
-<script src="/static/prism-php.min.js"></script>
-<script src="/static/countable.min.js"></script>
-
+    loadNavbar: true,
+    auto2top: true,
+    search: {
+      maxAge: 86400000,
+      placeholder: '🔍 Type to search ',
+      paths: 'auto',
+      noData: '😞 No Results! ',
+      depth: 1
+    },
+    namespace: 'docs-base',
+    sidebarDisplayLevel: 0,
+  });
+  </script>
+<script src="/api-doc/static/docsify-pagination.min.js"></script>
+<script src="/api-doc/static/docsify-copy-code.min.js"></script>
+<script src="/api-doc/static/docsify-sidebar-collapse.min.js"></script>
+<script src="/api-doc/static/prism-bash.min.js"></script>
+<script src="/api-doc/static/prism-php.min.js"></script>
+<script src="/api-doc/static/countable.min.js"></script>
 
 </body>
 </html>
-
