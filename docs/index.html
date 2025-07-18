@@ -10,25 +10,27 @@
 </head>
 <body>
 
-
-
-
 <style type="text/css">
 .content {
   overflow: auto;
 }
-
 </style>
 
   <div id="app"></div>
+<<<<<<< HEAD
   <script src="/api-doc/static/docsify@4.js"></script>
   
+=======
+
+
+  <script src="/api-doc/static/docsify@4.js"></script>
+
+>>>>>>> 50c1f6457959b6120d5231b9982e3b4174742019
   <script>
-  window.$docsify = {
-
+  window.$docsify = Object.assign(window.$docsify || {}, {
     coverpage: true,
-
     loadSidebar: true,
+<<<<<<< HEAD
 	
 	loadNavbar: true,
 	
@@ -54,14 +56,31 @@
 
   }
 </script>
+=======
+    loadNavbar: true,
+    auto2top: true,
+    search: {
+      maxAge: 86400000,
+      placeholder: '🔍 Type to search ',
+      paths: 'auto',
+      noData: '😞 No Results! ',
+      depth: 1
+    },
+    namespace: 'docs-base',
+    sidebarDisplayLevel: 0,
+  });
+  </script>
+>>>>>>> 50c1f6457959b6120d5231b9982e3b4174742019
 <script src="/api-doc/static/docsify-pagination.min.js"></script>
 <script src="/api-doc/static/docsify-copy-code.min.js"></script>
 <script src="/api-doc/static/docsify-sidebar-collapse.min.js"></script>
 <script src="/api-doc/static/prism-bash.min.js"></script>
 <script src="/api-doc/static/prism-php.min.js"></script>
 <script src="/api-doc/static/countable.min.js"></script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 50c1f6457959b6120d5231b9982e3b4174742019
 
 </body>
 </html>
-
