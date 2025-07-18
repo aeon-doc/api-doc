@@ -3,8 +3,8 @@
 [//]: # (<img src="/api-doc/static/img/AEON.png" alt="Unlimit API WIKI Logo" style="width:50px; height:40px;">)
 [//]: # (<img src="/api-doc/static/img/AEON.png" style="width:50px; height:40px;">)
 
-# <img src="/api-doc/static/img/AEON.png" style="width:80px; height:28px;">Unlimit API
-- [首页](/)
+# <img src="/api-doc/static/img/AEON.png" style="width:50px; height:28px;">Unlimit API
+- [home](/)
 - [对接说明](start/)
 - [接口列表](list/)
 - [免费接口](free/)   
